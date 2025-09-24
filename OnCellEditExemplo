@@ -1,0 +1,26 @@
+// Objetivo do código GlideScript: Impedir o campo State da tabela [incident] seja alterado para os valores: closed (7) ou resolvedo (6) pela lista. 
+
+// Segue abaixo o descritivo do desafio: 
+
+//  Create the saveAndClose variable with the value of true.
+// If the newValue of State is Resolved, alert the user that they cannot change State to Resolved from a list and set the value of the saveAndClose variable to false.
+// If the newValue of State is Closed, alert the user that they cannot change State to Closed from a list and set the value of the saveAndClose variable to false.
+// Execute the callback function returning the value of saveAndClose.
+// If true is returned, the new value of the State field is committed.
+// If false is returned, the new value of the State field is not committed.
+__________________________________________________________________________________________________________________________________
+
+
+function onCellEdit(sysIDs, table, oldValues, newValue, callback) {
+var saveAndClose = true;
+
+	if (newValue == 6){
+		alert('You Cannot change the state value to: ' + newValue);
+		callback(false);
+	} else if (newValue == 7){
+		alert('You Cannot change the state value to: ' + newValue);
+		callback(false);
+	}
+
+callback(saveAndClose); 
+}
